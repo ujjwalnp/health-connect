@@ -12,8 +12,8 @@ export default function TestingComponent() {
         {/* <InputField /> */}
         {/* <SearchBar /> */}
         {/* <CheckBox checkbox_data={"Check h"} /> */}
-        {/* <Login /> */}
-        <UploadPdf />
+        <Login />
+        {/* <UploadPdf /> */}
         </div>
     );
     }
