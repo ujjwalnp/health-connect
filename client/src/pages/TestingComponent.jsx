@@ -1,13 +1,12 @@
 import React from "react";
-// import InputField from "../components/InputField";
-import ShowMedicine from "../components/ShowMedicine";
-
+import InputField from "../components/InputField";
+import SearchBar from "../components/SearchBar";
 
 export default function TestingComponent() {
     return (
         <div>
         {/* <InputField /> */}
-        <ShowMedicine />
+        <SearchBar />
         </div>
     );
     }
