@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 export default function InputField() {
     return (
         <>
-            <Box
+            <Box 
                 sx={{
                     width: 500,
                     maxWidth: '100%',
