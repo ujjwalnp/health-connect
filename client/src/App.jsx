@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 
@@ -8,6 +6,8 @@ import './App.css'
 import TestingComponent from './pages/TestingComponent'
 import Admin from './pages/Admin'
 import Doctor from './pages/Doctor'
+import Doctor from './pages/Doctor'
+import Patient from './pages/Patient'
 
 function App() {
 
@@ -15,8 +15,12 @@ function App() {
     <>
       {/* <TestingComponent /> */}
       {/* < Admin /> */}
-      < Doctor />
+      {/* < Doctor /> */}
       
+    
+    <Patient/>
+     
+        {/* <TestingComponent/> */}
     </>
   )
 }
