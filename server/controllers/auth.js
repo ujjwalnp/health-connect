@@ -7,7 +7,7 @@ const Hospital = require('../models/Hospital')
 
 /* CREATE */
 exports.addAdmin = async (req, res) => {
-    const type = 'admin'
+    const type = 'hospital'
     const { hospitalId, registrationNo, name, password, address, contact } = req.body
 
     try {
@@ -35,7 +35,7 @@ exports.addAdmin = async (req, res) => {
 exports.login = async (req, res) => {
     const { id, password } = req.body
 
-    let colletion
+    let collection
     try {
         if (id.startsWith('H') || id.startsWith('M')) {
             collection = await Hospital.findOne({ hospitalId: id })
@@ -54,8 +54,8 @@ exports.login = async (req, res) => {
         }
 
         if (await bcrypt.compare(password, collection.password)) {
-            const accessToken = jsonwebtoken.sign({ id: collection._id, password: collection.password }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '7' })
-            res.status(200).json({ accessToken: accessToken })
+            const accessToken = jsonwebtoken.sign({ id: collection._id, role: collection.role }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '7' })
+            res.status(200).json({ accessToken: accessToken, role: collection.role })
         } else {
             res.status(400).json({ message: 'Invalid password' })
         }

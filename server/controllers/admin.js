@@ -6,6 +6,10 @@ const Hospital = require('../models/Hospital')
 
 /* CREATE */
 exports.addStaff = async (req, res) => {
+    if (req.userRole !== 'hospital') {
+        return res.status(403).json({ message: 'Forbidden: Access denied for this role' })
+    }
+
     const { hospitalId, type, licenseNo, nationalId, name, password, gender, age, address, contact } = req.body
 
     try {
@@ -32,10 +36,10 @@ exports.addStaff = async (req, res) => {
             staffId: savedStaffId,
             staffType: type,
         }
-        hospital.assignedStaff.push(newStaff)
+        hospital.assignedStaff.push(newAssignedStaff)
         await hospital.save()
 
-        res.status(201).json({ staff: newStaff })
+        res.status(201).json({ staff: newAssignedStaff })
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
