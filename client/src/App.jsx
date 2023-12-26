@@ -5,13 +5,14 @@ import './App.css'
 
 // for testing purposes only
 import TestingComponent from './pages/TestingComponent'
+import Admin from './pages/Admin'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <TestingComponent />
+      {/* <TestingComponent /> */}
+      < Admin />
     </>
   )
 }
