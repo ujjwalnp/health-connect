@@ -5,6 +5,7 @@ import CheckBox from "../components/CheckBox";
 import Login from "../components/Login";
 import UploadPdf from '../components/UploadPdf'
 import Signup from "../components/Signup";
+import OpenPdf from "../components/OpenPdf";
 
 
 export default function TestingComponent() {
@@ -13,9 +14,10 @@ export default function TestingComponent() {
         {/* <InputField /> */}
         {/* <SearchBar /> */}
         {/* <CheckBox checkbox_data={"Check h"} /> */}
-        <Login />
+        {/* <Login /> */}
         {/* <UploadPdf /> */}
         {/* <Signup whoAmI={"patient"}/> */}
+        <OpenPdf pdfUrl={"hello"} message={"something"}/>
         </div>
     );
     }
