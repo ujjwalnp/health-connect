@@ -2,21 +2,32 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const staffSchema = new Schema({
-    type: {
+    role: {
         type: String,
         required: true
     },
+    staffId: {
+        type: String,
+        required: true,
+        unique: true
+    },
     licenseNo: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
     nationalId: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
     name: {
         type: String,
         required: true
+    },
+    password: {
+        type: String, 
+        required: true,
     },
     gender: {
         type: String,

@@ -7,15 +7,14 @@ const Hospital = require('../models/Hospital')
 
 /* CREATE */
 exports.addAdmin = async (req, res) => {
-    const type = 'hospital'
-    const { hospitalId, registrationNo, name, password, address, contact } = req.body
+    const { role, hospitalId, registrationNo, name, password, address, contact } = req.body
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10)
 
         const newAdmin = new Hospital({
             hospitalId: hospitalId,
-            type: type,
+            role: role,
             registrationNo: registrationNo,
             name: name,
             password: hashedPassword,
@@ -54,7 +53,7 @@ exports.login = async (req, res) => {
         }
 
         if (await bcrypt.compare(password, collection.password)) {
-            const accessToken = jsonwebtoken.sign({ id: collection._id, role: collection.role }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '7' })
+            const accessToken = jsonwebtoken.sign({ id: collection._id, role: collection.role }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '7d' })
             res.status(200).json({ accessToken: accessToken, role: collection.role })
         } else {
             res.status(400).json({ message: 'Invalid password' })

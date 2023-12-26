@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
+const authRouter = require('./routes/auth')
 const adminRouter = require('./routes/admin')
 
 
@@ -27,6 +28,7 @@ server.use(express.json())
 
 /* ROUTES */
 server.use(cors())
+server.use('/auth', authRouter.router)
 server.use('/admin', adminRouter.router)
 
 /* SERVER LISTEN */

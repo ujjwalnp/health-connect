@@ -47,13 +47,14 @@ const medicalHistorySchema  = new Schema({
 )
 
 const PatientSchema = new Schema({
-    type: {
+    role: {
         type: String,
         required: true
     },
     medicalId: {
-        type: Number,
-        required: true
+        type: String,
+        required: true,
+        unique: true
     },
     nationalId: {
         type: Number,
@@ -62,6 +63,10 @@ const PatientSchema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    password: {
+        type: String, 
+        required: true,
     },
     gender: {
         type: String,

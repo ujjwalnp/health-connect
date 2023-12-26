@@ -20,9 +20,14 @@ const assignedStaffSchema = new Schema({
 })
 
 const hospitalSchema = new Schema({
-    type: {
+    role: {
         type: String,
         required: true
+    },
+    hospitalId: {
+        type: String,
+        required: true,
+        unique: true
     },
     registrationNo: {
         type: Number,
@@ -31,6 +36,10 @@ const hospitalSchema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    password: {
+        type: String, 
+        required: true,
     },
     address: {
         type: String, 
