@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const medicalHistorySchema  = new Schema({
     medicalId: {
-        type: Number,
+        type: String,
         required: true,
         ref: 'Paitient',
     },
@@ -29,7 +29,7 @@ const medicalHistorySchema  = new Schema({
     },
     signature: {
         doctorId: {
-            type: Number,
+            type: String,
             required: true,
             ref: 'Staff',
         },

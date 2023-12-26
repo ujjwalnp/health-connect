@@ -8,6 +8,7 @@ const swaggerDocument = require('./swagger-output.json')
 
 const authRouter = require('./routes/auth')
 const adminRouter = require('./routes/admin')
+const patientRouter = require('./routes/patient')
 
 
 /* EXPRESS SERVER  */
@@ -34,6 +35,8 @@ server.use(cors())
 server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 server.use('/auth', authRouter.router)
 server.use('/admin', adminRouter.router)
+server.use('/patient', patientRouter.router)
+
 
 /* SERVER LISTEN */
 // const hostname = getLocalIpAddress();
