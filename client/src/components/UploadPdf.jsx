@@ -15,11 +15,16 @@ const VisuallyHiddenInput = styled('input')({
   width: 1,
 });
 
-export default function UploadPdf() {
-  return (
+const UploadPdf = ({ status_check }) => {
+  if (!status_check) {
+    return null; // If status is false, don't render anything
+  }
+  return (status_check=="True")? (
     <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
       Upload Report
       <VisuallyHiddenInput type="file" />
     </Button>
-  );
-}
+  ):null;
+};
+
+export default UploadPdf;

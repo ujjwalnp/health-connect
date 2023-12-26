@@ -7,19 +7,21 @@ import Login from "../components/Login";
 import UploadPdf from '../components/UploadPdf'
 import Signup from "../components/Signup";
 import OpenPdf from "../components/OpenPdf";
+import Lab from "./Lab";
 
 
 export default function TestingComponent() {
     return (
         <div>
         {/* <InputField /> */}
-        <Cards />
+        {/* <Cards /> */}
         {/* <SearchBar /> */}
         {/* <CheckBox checkbox_data={"Check h"} /> */}
         {/* <Login /> */}
         {/* <UploadPdf /> */}
         {/* <Signup whoAmI={"patient"}/> */}
-        <OpenPdf pdfUrl={"hello"} message={"something"}/>
+        {/* <OpenPdf pdfUrl={"hello"} message={"something"}/> */}
+            <Lab />
         </div>
     );
     }
