@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import InputField from './InputField';
 const ShowMedicine = () => {
   const [medicines, setMedicines] = useState([]);
 
@@ -20,6 +20,8 @@ const ShowMedicine = () => {
           <li key={index}>{`${index + 1}. ${medicine}`}</li>
         ))}
       </ul>
+      <InputField />
+      
     </div>
   );
 }

@@ -8,6 +8,7 @@ import UploadPdf from '../components/UploadPdf'
 import Signup from "../components/Signup";
 import OpenPdf from "../components/OpenPdf";
 import Lab from "./Lab";
+import Doctor from "./Doctor";
 
 
 export default function TestingComponent() {
@@ -21,7 +22,8 @@ export default function TestingComponent() {
         {/* <UploadPdf /> */}
         {/* <Signup whoAmI={"patient"}/> */}
         {/* <OpenPdf pdfUrl={"hello"} message={"something"}/> */}
-            <Lab />
+            {/* <Lab /> */}
+        <Doctor />
         </div>
     );
     }
